@@ -13,39 +13,39 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.gestcom.gestcom.dto.ProdutoDTO;
-import com.gestcom.gestcom.service.ProdutoService;
+import com.gestcom.gestcom.dto.CategoriaDTO;
+import com.gestcom.gestcom.service.CategoriaService;
 
 @RestController
-@RequestMapping("/produto")
-public class ProdutoController {
+@RequestMapping("/categoria")
+public class CategoriaController {
 
     @Autowired
-    private ProdutoService produtoService;
+    private CategoriaService categoriaService;
 
     @PostMapping
-    public ResponseEntity<ProdutoDTO> save(@RequestBody ProdutoDTO produtoDTO) {
-        return ResponseEntity.ok(produtoService.save(produtoDTO));
+    public ResponseEntity<CategoriaDTO> save(@RequestBody CategoriaDTO categoriaDTO) {
+        return ResponseEntity.ok(categoriaService.save(categoriaDTO));
     }
 
     @GetMapping
-    public ResponseEntity<List<ProdutoDTO>> findAll() {
-        return ResponseEntity.ok(produtoService.findAll());
+    public ResponseEntity<List<CategoriaDTO>> findAll() {
+        return ResponseEntity.ok(categoriaService.findAll());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ProdutoDTO> findById(@PathVariable Long id) {
-        return ResponseEntity.ok(produtoService.findById(id));
+    public ResponseEntity<CategoriaDTO> findById(@PathVariable Long id) {
+        return ResponseEntity.ok(categoriaService.findById(id));
     }
 
     @PutMapping
-    public ResponseEntity<ProdutoDTO> update(@RequestBody ProdutoDTO produtoDTO) {
-        return ResponseEntity.ok(produtoService.update(produtoDTO));
+    public ResponseEntity<CategoriaDTO> update(@RequestBody CategoriaDTO categoriaDTO) {
+        return ResponseEntity.ok(categoriaService.update(categoriaDTO));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteById(@PathVariable Long id) {
-        produtoService.deleteById(id);
+        categoriaService.deleteById(id);
         return ResponseEntity.noContent().build();
     }
 }
