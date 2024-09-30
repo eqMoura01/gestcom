@@ -10,8 +10,7 @@ import com.gestcom.gestcom.dto.ProdutoDTO;
 import com.gestcom.gestcom.model.Produto;
 import com.gestcom.gestcom.repository.ProdutoRepository;
 import com.gestcom.gestcom.utils.ProdutoMapper;
-
-import jakarta.persistence.EntityNotFoundException;
+import com.gestcom.gestcom.utils.ValidaObjetoPresente;
 
 @Service
 public class ProdutoService {
@@ -24,8 +23,8 @@ public class ProdutoService {
     }
 
     public ProdutoDTO findById(Long id) {
-        return ProdutoMapper.toProdutoDTO(produtoRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Produto com id " + id + " não encontrado")));
+        return ProdutoMapper
+                .toProdutoDTO(ValidaObjetoPresente.validaObjetoPresente(produtoRepository.findById(id), "Produto"));
     }
 
     public List<ProdutoDTO> findAll() {

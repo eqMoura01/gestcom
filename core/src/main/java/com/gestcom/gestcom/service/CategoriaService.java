@@ -1,7 +1,6 @@
 package com.gestcom.gestcom.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +10,7 @@ import com.gestcom.gestcom.dto.CategoriaDTO;
 import com.gestcom.gestcom.model.Categoria;
 import com.gestcom.gestcom.repository.CategoriaRepository;
 import com.gestcom.gestcom.utils.CategoriaMapper;
-
-import jakarta.persistence.EntityNotFoundException;
+import com.gestcom.gestcom.utils.ValidaObjetoPresente;
 
 @Service
 public class CategoriaService {
@@ -26,8 +24,9 @@ public class CategoriaService {
 
     public CategoriaDTO findById(Long id) {
 
-        return CategoriaMapper.toCategoriaDTO(categoriaRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Categoria com id " + id + " não encontrado")));
+        return CategoriaMapper
+                .toCategoriaDTO(ValidaObjetoPresente.validaObjetoPresente(categoriaRepository.findById(id),
+                        "Categoria"));
     }
 
     public List<CategoriaDTO> findAll() {
