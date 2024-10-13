@@ -23,7 +23,7 @@ public class ProdutoMapper {
         return produtoDTO;
     }
 
-    public static List<ProdutoDTO> toProdutoDTOs(List<Produto> produtos) {
+    public static List<ProdutoDTO> toProdutosDTO(List<Produto> produtos) {
         List<ProdutoDTO> produtoDTOs = new ArrayList<ProdutoDTO>();
 
         for (Produto produto : produtos) {

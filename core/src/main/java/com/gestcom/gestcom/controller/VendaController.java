@@ -17,7 +17,7 @@ import com.gestcom.gestcom.dto.ProdutoVendaDTO;
 import com.gestcom.gestcom.service.ProdutoVendaService;
 
 @RestController
-@RequestMapping("/vendas")
+@RequestMapping("/venda")
 public class VendaController {
 
     @Autowired

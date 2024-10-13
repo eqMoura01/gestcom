@@ -28,7 +28,7 @@ public class ProdutoService {
     }
 
     public List<ProdutoDTO> findAll() {
-        return ProdutoMapper.toProdutoDTOs(produtoRepository.findAll());
+        return ProdutoMapper.toProdutosDTO(produtoRepository.findAll());
     }
 
     public ProdutoDTO update(ProdutoDTO produtoDTO) {

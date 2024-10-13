@@ -1,5 +1,7 @@
 package com.gestcom.gestcom.model;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,7 +24,7 @@ public class ProdutoVenda {
 
     @ManyToOne
     @JoinColumn(name = "produto_id")
-    private Produto produto; // Um ProdutoVenda está associado a um único Produto.
+    private List<Produto> produtos; // Um ProdutoVenda está associado a um único Produto.
 
     private Integer quantidade;
 

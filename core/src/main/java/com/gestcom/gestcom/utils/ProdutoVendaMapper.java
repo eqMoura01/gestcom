@@ -10,7 +10,7 @@ public class ProdutoVendaMapper {
 
     public static ProdutoVendaDTO toProdutoVendaDTO(ProdutoVenda produtoVenda) {
         ProdutoVendaDTO produtoVendaDTO = new ProdutoVendaDTO(produtoVenda.getId(),
-                ProdutoMapper.toProdutoDTO(produtoVenda.getProduto()), produtoVenda.getQuantidade(),
+                ProdutoMapper.toProdutosDTO(produtoVenda.getProdutos()), produtoVenda.getQuantidade(),
                 produtoVenda.getValorUnitario(), produtoVenda.getValorTotal());
 
         return produtoVendaDTO;
@@ -18,7 +18,7 @@ public class ProdutoVendaMapper {
 
     public static ProdutoVenda toProdutoVenda(ProdutoVendaDTO produtoVendaDTO) {
         ProdutoVenda produtoVenda = new ProdutoVenda(produtoVendaDTO.getId(),
-                ProdutoMapper.toProduto(produtoVendaDTO.getProdutos()), produtoVendaDTO.getQuantidade(),
+                ProdutoMapper.toProdutos(produtoVendaDTO.getProdutos()), produtoVendaDTO.getQuantidade(),
                 produtoVendaDTO.getValorUnitario(), produtoVendaDTO.getValorTotal());
 
         return produtoVenda;
