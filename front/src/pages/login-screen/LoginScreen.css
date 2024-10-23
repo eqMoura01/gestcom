@@ -1,0 +1,11 @@
+/* Centraliza o componente na tela */
+.login-screen-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+}
+main {
+  background-color: #121212;
+}
+

@@ -1,0 +1,124 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Certifique-se de que o contêiner ocupa toda a altura da tela */
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transition: all 1s ease;
+    width: 600px; /* Aumenta a largura do formulário */
+    height: 400px; /* Aumenta a altura do formulário */
+}
+
+.form .form_front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Aumenta o espaçamento entre os elementos */
+    position: absolute;
+    backface-visibility: hidden;
+    padding: 80px 60px; /* Aumenta o padding */
+    border-radius: 20px;
+    box-shadow: inset 3px 3px 15px rgba(0,0,0,1),
+                inset -2px -2px 10px rgba(255, 255, 255, 0.6);
+}
+
+.form .form_back {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Aumenta o espaçamento entre os elementos */
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(-180deg);
+    padding: 80px 60px; /* Aumenta o padding */
+    border-radius: 20px;
+    box-shadow: inset 3px 3px 15px rgba(0,0,0,1),
+                inset -2px -2px 10px rgba(255, 255, 255, 0.6);
+}
+
+.form_details {
+    font-size: 30px; /* Aumenta o tamanho da fonte */
+    font-weight: 600;
+    padding-bottom: 15px;
+    color: white;
+}
+
+.input {
+    width: 300px; /* Aumenta a largura do input */
+    min-height: 55px; /* Aumenta a altura mínima do input */
+    color: #fff;
+    outline: none;
+    transition: 0.35s;
+    padding: 0px 10px; /* Aumenta o padding */
+    background-color: #212121;
+    border-radius: 8px;
+    border: 2px solid #212121;
+    box-shadow: 8px 8px 15px rgba(0,0,0,1),
+                2px 2px 15px rgba(255, 255, 255, 0.6);
+}
+
+.input::placeholder {
+    color: #999;
+}
+
+.input:focus.input::placeholder {
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.input:focus {
+    transform: scale(1.05);
+    box-shadow: 8px 8px 15px rgba(0,0,0,1),
+                2px 2px 15px rgba(255, 255, 255, 0.6),
+                inset 3px 3px 15px rgba(0,0,0,1),
+                inset -2px -2px 10px rgba(255, 255, 255, 0.6);
+}
+
+.btn {
+    padding: 15px 45px; /* Aumenta o padding do botão */
+    cursor: pointer;
+    background-color: #212121;
+    border-radius: 8px;
+    border: 2px solid #212121;
+    box-shadow: 8px 8px 15px rgba(0,0,0,1),
+                2px 2px 15px rgba(255, 255, 255, 0.6);
+    color: #fff;
+    font-size: 18px; /* Aumenta o tamanho da fonte */
+    font-weight: bold;
+    transition: 0.35s;
+}
+
+.btn:hover, .btn:focus {
+    transform: scale(1.05);
+    box-shadow: 8px 8px 15px rgba(0,0,0,1),
+                2px 2px 15px rgba(255, 255, 255, 0.6),
+                inset 3px 3px 15px rgba(0,0,0,1),
+                inset -2px -2px 10px rgba(255, 255, 255, 0.6);
+}
+
+.form .switch {
+    font-size: 15px; /* Aumenta o tamanho da fonte */
+    color: white;
+}
+
+.form .switch .signup_tog {
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.container #signup_toggle {
+    display: none;
+}
+
+.container #signup_toggle:checked + .form {
+    transform: rotateY(-180deg);
+}
