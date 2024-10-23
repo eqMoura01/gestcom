@@ -52,13 +52,11 @@
 }
 
 .input {
-    width: 300px; /* Aumenta a largura do input */
-    min-height: 55px; /* Aumenta a altura mínima do input */
-    color: #fff;
+    width: 300px;
+    min-height: 55px;
     outline: none;
     transition: 0.35s;
-    padding: 0px 10px; /* Aumenta o padding */
-    background-color: #212121;
+    padding: 0px 10px;
     border-radius: 8px;
     border: 2px solid #212121;
     box-shadow: 8px 8px 15px rgba(0,0,0,1),
@@ -121,4 +119,39 @@
 
 .container #signup_toggle:checked + .form {
     transform: rotateY(-180deg);
+}
+
+/* Estilos comuns */
+.input {
+  width: 300px;
+  min-height: 55px;
+  outline: none;
+  transition: 0.35s;
+  padding: 0px 10px;
+  border-radius: 8px;
+  border: 2px solid #212121;
+  box-shadow: 8px 8px 15px rgba(0,0,0,1),
+              2px 2px 15px rgba(255, 255, 255, 0.6);
+}
+
+/* Modo claro */
+.light-mode .form_details,
+.light-mode .switch {
+  color: #000;
+}
+
+.light-mode .input {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Modo escuro */
+.dark-mode .form_details,
+.dark-mode .switch {
+  color: #fff;
+}
+
+.dark-mode .input {
+  background-color: #212121;
+  color: #fff;
 }

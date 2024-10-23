@@ -1,11 +1,35 @@
 /* Centraliza o componente na tela */
 .login-screen-container {
+  position: relative; /* Permite que os filhos usem posicionamento absoluto */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; 
+  height: 100vh;
 }
+
+.login-screen-container > :first-child {
+  position: absolute;
+  top: 20px; /* Ajuste conforme necessário */
+  right: 20px; /* Ajuste conforme necessário */
+}
+
 main {
   background-color: #121212;
 }
 
+#theme-toggle-button {
+  position: absolute;
+  top: 20px; /* Ajuste conforme necessário */
+  right: 20px; /* Ajuste conforme necessário */
+  z-index: 10; /* Garante que o botão fique acima de outros elementos */
+}
+
+.dark-mode {
+  background-color: #333;
+  color: #dbdada;
+}
+
+.light-mode {
+  background-color: #f0f0f0;
+  color: #000;
+}
