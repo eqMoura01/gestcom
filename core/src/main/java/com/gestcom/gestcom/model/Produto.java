@@ -24,6 +24,7 @@ public class Produto {
     private String descricao;
     private Double preco;
     private Integer quantidade;
+    
     @ManyToOne
     private Categoria categoria;
     
