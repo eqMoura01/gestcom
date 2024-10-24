@@ -5,69 +5,21 @@ import './Login.css';
 const Login = ({ textColor, inputColor, buttonColor }) => {
   return (
     <div className="container">
-      <input type="checkbox" id="signup_toggle" />
-      <form className="form">
-        <div className="form_front" style={{ color: textColor }}>
-          <div className="form_details">Login</div>
-          <input
-            placeholder="Username"
-            className="input"
-            type="text"
-            style={{ backgroundColor: inputColor }}
-          />
-          <input
-            placeholder="Password"
-            className="input"
-            type="text"
-            style={{ backgroundColor: inputColor }}
-          />
-          <button className="btn" style={{ backgroundColor: buttonColor }}>
-            Login
-          </button>
-          <span className="switch">
-            Don't have an account? 
-            <label className="signup_tog" htmlFor="signup_toggle">
-              Sign Up
-            </label>
-          </span>
-        </div>
-        <div className="form_back" style={{ color: textColor }}>
-          <div className="form_details">SignUp</div>
-          <input
-            placeholder="Firstname"
-            className="input"
-            type="text"
-            style={{ backgroundColor: inputColor }}
-          />
-          <input
-            placeholder="Username"
-            className="input"
-            type="text"
-            style={{ backgroundColor: inputColor }}
-          />
-          <input
-            placeholder="Password"
-            className="input"
-            type="text"
-            style={{ backgroundColor: inputColor }}
-          />
-          <input
-            placeholder="Confirm Password"
-            className="input"
-            type="text"
-            style={{ backgroundColor: inputColor }}
-          />
-          <button className="btn" style={{ backgroundColor: buttonColor }}>
-            Signup
-          </button>
-          <span className="switch">
-            Already have an account? 
-            <label className="signup_tog" htmlFor="signup_toggle">
-              Sign In
-            </label>
-          </span>
-        </div>
-      </form>
+      <div className="login-form">
+        <form action="" className="login-form-content">
+          
+            <h1>Login</h1>
+            <div className="login-form-inputs">
+              <input type="text" placeholder="Email" />
+              <input type="password" placeholder="Password" />
+            </div>
+          <div className="login-form-buttons">
+            <button type="submit">Login</button>
+            <button type="submit">Register</button>
+            <button type="submit">Forgot Password</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
